@@ -10,6 +10,8 @@ public class PinchZoom : ContentView
     private double _xOffset = 0;
     private double _yOffset = 0;
     private bool _secondDoubleTapp = false;
+    private double _xOffsetCorrection = 0;
+    private double _yOffsetCorrection = 0;
 
     public PinchZoom()
     {
@@ -79,8 +81,8 @@ public class PinchZoom : ContentView
         {
             case GestureStatus.Running:
 
-                var newX = (e.TotalX * Scale) + _xOffset;
-                var newY = (e.TotalY * Scale) + _yOffset;
+                var newX = (e.TotalX * Scale) + _xOffset - _xOffsetCorrection;
+                var newY = (e.TotalY * Scale) + _yOffset - _yOffsetCorrection;
 
                 var width = (Content.Width * Content.Scale);
                 var height = (Content.Height * Content.Scale);
@@ -130,9 +132,24 @@ public class PinchZoom : ContentView
                 {
                     newY = 0;
                 }
+                if (_xOffsetCorrection == 0 & _yOffsetCorrection == 0)
+                {
+                    _xOffsetCorrection = newX - _xOffset;
+                    _yOffsetCorrection = newY - _yOffset;
+                    Content.TranslationX = newX - _xOffsetCorrection;
+                    Content.TranslationY = newY - _yOffsetCorrection;
+                }
+                else
+                {
+                    Content.TranslationX = newX;
+                    Content.TranslationY = newY;
+                }
 
                 Content.TranslationX = newX;
                 Content.TranslationY = newY;
+                _currentScale = Content.Scale;
+                _xOffsetCorrection = 0;
+                _yOffsetCorrection = 0;
                 break;
             case GestureStatus.Completed:
                 _xOffset = Content.TranslationX;
