@@ -24,6 +24,8 @@
 		<PackageIcon>pinch.918x1024.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/Lucasvor/PinchZoomImageMAUI</RepositoryUrl>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -40,6 +42,14 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="LICENSE.txt">
+			<Pack>true</Pack>
+			<PackagePath></PackagePath>
+			<Visible>True</Visible>
+		</None>
 	</ItemGroup>
 
 </Project>

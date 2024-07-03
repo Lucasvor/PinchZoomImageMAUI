@@ -11,9 +11,9 @@ MAUI makes it easy to zoom in and out on your images.
 
 |Name|Info|
 | ------------------- | ------------------- | 
+|PinchZoomImageMAUI|[![NuGet](https://buildstats.info/nuget/PinchZoomImageMAUI)](https://www.nuget.org/packages/PinchZoomImageMAUI/)|
 
  
- **Platform Support**
 
 PinchZoomImage is a MAUI library.
 
