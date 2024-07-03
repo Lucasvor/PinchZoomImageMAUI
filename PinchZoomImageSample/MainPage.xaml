@@ -12,13 +12,11 @@
         Spacing="25"
         VerticalOptions="Center">
         <pinch:PinchZoom>
-            <pinch:PinchZoom.Content>
-                <Image
-                    Aspect="AspectFit"
-                    HeightRequest="185"
-                    SemanticProperties.Description="dot net bot in a race car number eight"
-                    Source="dotnet_bot.png" />
-            </pinch:PinchZoom.Content>
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="185"
+                SemanticProperties.Description="dot net bot in a race car number eight"
+                Source="dotnet_bot.png" />
         </pinch:PinchZoom>
 
     </VerticalStackLayout>

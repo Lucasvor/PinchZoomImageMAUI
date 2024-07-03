@@ -3,6 +3,7 @@
     "PinchZoomMaui")]
 namespace PinchZoomImageMAUI;
 
+[ContentProperty(nameof(Content))]
 public class PinchZoom : ContentView
 {
     private double _currentScale = 1;
